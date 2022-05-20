@@ -16,23 +16,66 @@ struct Data: Decodable {
     var quote: String
 }
 
+struct CustomColor {
+    static let fontColor = Color("fontColor")
+    // Add more here...
+}
 
 struct ContentView: View {
     
-    @State var quote = StoicData(data: Data(author: "emelyn", quote: "eme"))
+    @State var quote = StoicData(data: Data(author: "Author", quote: "Quote"))
+    
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text("\(quote.data.quote)")
-            Text("\(quote.data.author)")
-            Button("Next") {
-                self.fetchData()
+        
+        ZStack {
+            Color.accentColor
+                .ignoresSafeArea()
+            VStack(alignment: .leading) {
+                Image(systemName: "quote.opening")
+                    .resizable()
+                    .frame(width: 100, height: 60, alignment: .leading)
+                    
+                Text("\(quote.data.quote)")
+                    .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
+                    .bold()
+                    .padding(.top, 15)
+                    
+                    
+                Text("\(quote.data.author)")
+                    .font(.headline)
+                    .padding(.top, 15)
+
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {self.fetchData()}, label: {
+                        HStack {
+                            Text("Next")
+                                .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
+                                .bold()
+                                
+                            Image(systemName: "greaterthan.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30, alignment: .leading)
+                        }
+                        .padding(15)
+                        .foregroundColor(Color.accentColor)
+                        .background(CustomColor.fontColor)
+                        .cornerRadius(12)
+                    })
+                   
+                }
+                
             }
+            .foregroundColor(CustomColor.fontColor)
+            
+            .padding(25)
         }
+        
         .task {
             self.fetchData()
         }
-        
     }
     
     func fetchData() {
@@ -58,5 +101,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
+            .previewDevice("iPhone 11")
+            
     }
 }
