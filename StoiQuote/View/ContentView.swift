@@ -7,23 +7,9 @@
 
 import SwiftUI
 
-struct StoicData: Decodable {
-    var data: Data
-}
-
-struct Data: Decodable {
-    var author: String
-    var quote: String
-}
-
-struct CustomColor {
-    static let fontColor = Color("fontColor")
-}
-
 struct ContentView: View {
     
-    @State var quote = StoicData(data: Data(author: "Made with ❤ by \nJayvee Ballesteros", quote: "StoiQuote"))
-    
+@ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
         
@@ -35,7 +21,7 @@ struct ContentView: View {
                     .resizable()
                     .frame(width: 100, height: 60, alignment: .leading)
                 
-                Text("\(quote.data.quote)")
+                Text("\(networkManager.quotes.quote)")
                     .font(Font.custom("Fraunces", size: 70, relativeTo: .largeTitle))
                     .bold()
                     .padding(.top, 15)
@@ -43,7 +29,7 @@ struct ContentView: View {
                     .lineLimit(20)
                 
                 
-                Text("\(quote.data.author)")
+                Text(networkManager.quotes.author)
                     .font(.system(size: 20.0))
                     .font(.headline)
                     .fontWeight(.bold)
@@ -55,7 +41,9 @@ struct ContentView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(action: {self.fetchData()}, label: {
+                    Button(action: {
+                        networkManager.fetchData()
+                    }, label: {
                         HStack {
                             Text("Next")
                                 .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
@@ -84,24 +72,7 @@ struct ContentView: View {
         
     }
     
-    func fetchData() {
-        // create url
-        let url = URL(string: "https://api.themotivate365.com/stoic-quote")
-        
-        URLSession.shared.dataTask(with: url!) {data, _, error in
-            DispatchQueue.main.async {
-                if let data = data {
-                    do {
-                        let decoder = JSONDecoder()
-                        let decodedData = try decoder.decode(StoicData.self, from: data)
-                        self.quote = decodedData
-                    } catch {
-                        print("Something went wrong.")
-                    }
-                }
-            }
-        } .resume()
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
