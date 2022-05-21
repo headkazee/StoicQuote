@@ -1,5 +1,5 @@
 
-<p align="center"><img src="Images/icon.png" width="200"></p>
+<p align="center"><img src="Images/Icon.png" width="200"></p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/iOS-15.0+-blue.svg" />
