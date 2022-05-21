@@ -44,6 +44,14 @@
 			path = CustomFont;
 			sourceTree = "<group>";
 		};
+		87D843FA2838D79100CE4D79 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				87D843F82838D31B00CE4D79 /* screen.gif */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		87EB89682837D19A006CFF0E = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +71,7 @@
 		87EB89732837D19B006CFF0E /* StoiQuote */ = {
 			isa = PBXGroup;
 			children = (
-				87D843F82838D31B00CE4D79 /* screen.gif */,
+				87D843FA2838D79100CE4D79 /* Images */,
 				87A5B5CD28380FA1000E7939 /* CustomFont */,
 				87EB89742837D19B006CFF0E /* StoiQuoteApp.swift */,
 				87EB89762837D19B006CFF0E /* ContentView.swift */,
