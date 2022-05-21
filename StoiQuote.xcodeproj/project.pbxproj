@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87A5B5D128381110000E7939 /* Fraunces.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87A5B5D028381110000E7939 /* Fraunces.ttf */; };
+		87D843F92838D31B00CE4D79 /* screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 87D843F82838D31B00CE4D79 /* screen.gif */; };
 		87EB89752837D19B006CFF0E /* StoiQuoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EB89742837D19B006CFF0E /* StoiQuoteApp.swift */; };
 		87EB89772837D19B006CFF0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EB89762837D19B006CFF0E /* ContentView.swift */; };
 		87EB89792837D19F006CFF0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87EB89782837D19F006CFF0E /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		87A5B5D028381110000E7939 /* Fraunces.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fraunces.ttf; sourceTree = "<group>"; };
+		87D843F82838D31B00CE4D79 /* screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen.gif; sourceTree = "<group>"; };
 		87EB89712837D19B006CFF0E /* StoiQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoiQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87EB89742837D19B006CFF0E /* StoiQuoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoiQuoteApp.swift; sourceTree = "<group>"; };
 		87EB89762837D19B006CFF0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		87EB89732837D19B006CFF0E /* StoiQuote */ = {
 			isa = PBXGroup;
 			children = (
+				87D843F82838D31B00CE4D79 /* screen.gif */,
 				87A5B5CD28380FA1000E7939 /* CustomFont */,
 				87EB89742837D19B006CFF0E /* StoiQuoteApp.swift */,
 				87EB89762837D19B006CFF0E /* ContentView.swift */,
@@ -142,6 +145,7 @@
 			files = (
 				87EB897C2837D19F006CFF0E /* Preview Assets.xcassets in Resources */,
 				87EB89792837D19F006CFF0E /* Assets.xcassets in Resources */,
+				87D843F92838D31B00CE4D79 /* screen.gif in Resources */,
 				87A5B5D128381110000E7939 /* Fraunces.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +296,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +326,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
