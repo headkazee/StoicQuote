@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Results: Decodable {
-    var hits: Quote
+    var data: Quote
 }
 
 struct Quote: Decodable {

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-@ObservedObject var networkManager = NetworkManager()
+    // MARK: - PROPERTIES
+    
+    @ObservedObject var networkManager = NetworkManager()
+    
+    // MARK: - BODY
     
     var body: some View {
         
@@ -28,7 +32,6 @@ struct ContentView: View {
                     .minimumScaleFactor(0.5)
                     .lineLimit(20)
                 
-                
                 Text(networkManager.quotes.author)
                     .font(.system(size: 20.0))
                     .font(.headline)
@@ -39,46 +42,45 @@ struct ContentView: View {
                     .lineLimit(2)
                 
                 Spacer()
+                
                 HStack {
                     Spacer()
                     Button(action: {
-                        networkManager.fetchData()
+                        self.networkManager.fetchData()
                     }, label: {
-                        HStack {
-                            Text("Next")
-                                .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
-                                .bold()
-                            
-                            
-                            Image(systemName: "greaterthan.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30, alignment: .leading)
-                        }
-                        
-                        .padding()
-                        .foregroundColor(Color.accentColor)
-                        .background(CustomColor.fontColor)
-                        .clipShape(Capsule())
+                        btnView()
                     })
                     
-                }
-                
-            }
+                } //: HSTACK
+            } //: VSTACK
             .foregroundColor(CustomColor.fontColor)
-            
             .padding(25)
-        }
-        
-        
+        } //: ZSTACK
     }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 11")
-        
+    }
+}
+
+struct btnView: View {
+    var body: some View {
+        HStack {
+            Text("Next")
+                .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
+                .bold()
+            
+            
+            Image(systemName: "greaterthan.circle.fill")
+                .resizable()
+                .frame(width: 30, height: 30, alignment: .leading)
+        } //: HSTACK
+        .padding()
+        .foregroundColor(Color.accentColor)
+        .background(CustomColor.fontColor)
+        .clipShape(Capsule())
     }
 }
