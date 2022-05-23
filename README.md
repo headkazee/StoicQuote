@@ -19,7 +19,7 @@ StoiQuote is a simple app that displays random quotes about Stoicism.
 
 ### 👨🏻‍💻 API
 
-[https://api.themotivate365.com/stoic-quote](https://api.themotivate365.com/stoic-quote)
+[https://stoicquotesapi.com/v1/api/quotes/random](https://stoicquotesapi.com/v1/api/quotes/random)
 
 ### 📚 Learnings
 
