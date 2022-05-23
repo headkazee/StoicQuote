@@ -15,7 +15,7 @@ StoiQuote is a simple app that displays random quotes about Stoicism.
 
 #### App Demo
 
-<img src="Images/screen.gif" width="320"/>
+<img src="Images/screen2.gif" width="320"/>
 
 ### 👨🏻‍💻 API
 
