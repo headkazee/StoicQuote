@@ -13,19 +13,19 @@ struct ContentView: View {
     
     @ObservedObject var networkManager = NetworkManager()
     
+    
     // MARK: - BODY
     
     var body: some View {
-        
+        let bgColor = CustomColor.randomBGColor()
         ZStack {
-            Color.accentColor
-                .ignoresSafeArea()
+            bgColor.ignoresSafeArea()
             VStack(alignment: .leading) {
                 Image(systemName: "quote.opening")
                     .resizable()
                     .frame(width: 100, height: 60, alignment: .leading)
                 
-                Text("\(networkManager.quotes.quote)")
+                Text("\(networkManager.quotes.body)")
                     .font(Font.custom("Fraunces", size: 70, relativeTo: .largeTitle))
                     .bold()
                     .padding(.top, 15)
@@ -48,12 +48,26 @@ struct ContentView: View {
                     Button(action: {
                         self.networkManager.fetchData()
                     }, label: {
-                        btnView()
+                        HStack {
+                            Text("Next")
+                                .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
+                                .bold()
+                            
+                            
+                            Image(systemName: "greaterthan.circle.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30, alignment: .leading)
+                        } //: HSTACK
+                        .padding()
+                        .foregroundColor(bgColor)
+                        .background(.white)
+                        .clipShape(Capsule())
+                    
                     })
                     
                 } //: HSTACK
             } //: VSTACK
-            .foregroundColor(CustomColor.fontColor)
+            .foregroundColor(.white)
             .padding(25)
         } //: ZSTACK
     }
@@ -62,25 +76,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewDevice("iPhone 11")
-    }
-}
-
-struct btnView: View {
-    var body: some View {
-        HStack {
-            Text("Next")
-                .font(Font.custom("Fraunces", size: 30, relativeTo: .largeTitle))
-                .bold()
-            
-            
-            Image(systemName: "greaterthan.circle.fill")
-                .resizable()
-                .frame(width: 30, height: 30, alignment: .leading)
-        } //: HSTACK
-        .padding()
-        .foregroundColor(Color.accentColor)
-        .background(CustomColor.fontColor)
-        .clipShape(Capsule())
+            .previewDevice("iPhone 13 Pro")
     }
 }

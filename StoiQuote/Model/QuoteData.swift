@@ -8,15 +8,25 @@
 import Foundation
 import SwiftUI
 
-struct Results: Decodable {
-    var data: Quote
-}
+
 
 struct Quote: Decodable {
     var author: String
-    var quote: String
+    var body: String
 }
 
 struct CustomColor {
-    static let fontColor = Color("fontColor")
+    
+    static func randomBGColor() -> Color {
+        
+        let backgroundColor = [
+            Color(red: 0.263, green: 0.365, blue: 0.337), // #435d56
+            Color(red: 0.557, green: 0.584, blue: 0.478), // #8e957a
+            Color(red: 0.588, green: 0.345, blue: 0.275), // #965846
+        ]
+        let bgColor = backgroundColor.randomElement()!
+        return bgColor
+    }
+    
+    
 }
