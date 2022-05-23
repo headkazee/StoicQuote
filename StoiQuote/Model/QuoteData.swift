@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-
 struct Quote: Decodable {
     var author: String
     var body: String
