@@ -1,5 +1,5 @@
 
-<p align="center"><img src="Images/Icon.png" width="200"></p>
+<p align="center"><img src="icon.png" width="200"></p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/iOS-15.0+-blue.svg" />
@@ -15,7 +15,7 @@ StoiQuote is a simple app that displays random quotes about Stoicism.
 
 #### App Demo
 
-<img src="Images/screen2.gif" width="320"/>
+<img src="demo.gif" width="320"/>
 
 ### 👨🏻‍💻 API
 
